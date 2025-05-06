@@ -67,10 +67,12 @@ ENV HF_HOME=/huggingface
 
 RUN pip install flash-attn --no-build-isolation
 
+RUN pip install -U gradio
+
 #RUN source patchtransformers.sh
 
 # Espone la porta per Gradio
 EXPOSE 8080
 
 # Comando di default per avviare il server Gradio
-CMD ["python3", "demo_gradio.py", "--share", "--port", "8080"]
+CMD ["python3", "gradio_demo.py", "--share", "--port", "8080"]
